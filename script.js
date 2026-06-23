@@ -1,4 +1,3 @@
-
 setInterval(()=>{
 document.getElementById("clock").innerHTML=new Date().toLocaleTimeString("id-ID");
 },1000);
