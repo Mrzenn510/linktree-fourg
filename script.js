@@ -1,9 +1,9 @@
 function jam(){
 
-let waktu=new Date();
+let sekarang = new Date();
 
-document.getElementById("clock").innerHTML=
-waktu.toLocaleTimeString("id-ID");
+document.getElementById("clock").innerHTML =
+sekarang.toLocaleTimeString("id-ID");
 
 }
 
