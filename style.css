@@ -1,47 +1,94 @@
-body{
+*{
 margin:0;
-background:#09070f;
+padding:0;
+box-sizing:border-box;
+font-family:'Cinzel', serif;
+}
+
+body{
+background:#09050f;
 overflow:hidden;
-font-family:Georgia,serif;
-color:#fff;
+height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-height:100vh;
+color:white;
 }
-#particles{
-position:fixed;
+
+.moon{
+position:absolute;
+width:250px;
+height:250px;
+background:#ff003c;
+border-radius:50%;
+top:80px;
+right:100px;
+box-shadow:0 0 120px #ff003c;
+}
+
+.fog{
+position:absolute;
 width:100%;
 height:100%;
+background:linear-gradient(transparent,rgba(100,0,255,.2));
+animation:fog 8s infinite alternate;
 }
+
+@keyframes fog{
+from{
+transform:translateY(0);
+}
+to{
+transform:translateY(-20px);
+}
+}
+
 .card{
 position:relative;
-z-index:2;
-width:350px;
-padding:30px;
-text-align:center;
-background:rgba(20,20,30,.6);
+width:370px;
+padding:40px;
+background:rgba(0,0,0,.55);
 backdrop-filter:blur(15px);
-border:1px solid #6a3cff;
-border-radius:25px;
-box-shadow:0 0 40px #6a3cff;
+border:1px solid #9d4edd;
+border-radius:30px;
+box-shadow:0 0 40px #7b2cbf;
+text-align:center;
 }
+
 .avatar{
 width:120px;
 border-radius:50%;
-box-shadow:0 0 25px #a855f7;
+box-shadow:0 0 40px #9d4edd;
 }
+
+h1{
+margin-top:20px;
+font-size:55px;
+}
+
+p{
+margin:20px 0;
+font-size:18px;
+}
+
 .btn{
 display:block;
-margin:15px 0;
-padding:15px;
+padding:18px;
+margin:18px 0;
+border:1px solid #9d4edd;
+border-radius:20px;
 text-decoration:none;
 color:white;
-border:1px solid #a855f7;
-border-radius:15px;
-transition:.3s;
+transition:.4s;
 }
+
 .btn:hover{
-background:#a855f7;
-box-shadow:0 0 30px #a855f7;
+background:#9d4edd;
+transform:translateY(-6px);
+box-shadow:0 0 40px #9d4edd;
+}
+
+#clock{
+margin-top:20px;
+font-size:20px;
 }
