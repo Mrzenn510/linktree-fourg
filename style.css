@@ -2,160 +2,158 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Cinzel', serif;
+font-family:'Cinzel',serif;
 }
 
 body{
-background:#09050f;
-overflow:hidden;
 height:100vh;
+overflow:hidden;
+
+background:
+linear-gradient(rgba(0,0,30,.7),rgba(0,0,0,.8)),
+url("BACKGROUND_KNIGHT.jpg");
+
+background-size:cover;
+background-position:center;
+
 display:flex;
 justify-content:center;
 align-items:center;
-color:white;
 }
 
-.moon{
+.stars{
 position:absolute;
-width:250px;
-height:250px;
-background:#ff003c;
-border-radius:50%;
-top:80px;
-right:100px;
-box-shadow:0 0 120px #ff003c;
+width:100%;
+height:100%;
+background-image:
+radial-gradient(white 1px,transparent 1px);
+background-size:30px 30px;
+animation:stars 50s linear infinite;
+opacity:.6;
+}
+
+@keyframes stars{
+from{
+transform:translateY(0);
+}
+to{
+transform:translateY(1000px);
+}
 }
 
 .fog{
 position:absolute;
 width:100%;
 height:100%;
-background:linear-gradient(transparent,rgba(100,0,255,.2));
-animation:fog 8s infinite alternate;
+background:linear-gradient(
+transparent,
+rgba(90,90,255,.15)
+);
+
+animation:fog 6s infinite alternate;
 }
 
 @keyframes fog{
 from{
 transform:translateY(0);
 }
+
 to{
-transform:translateY(-20px);
+transform:translateY(-25px);
 }
 }
 
-.card{
+.container{
 position:relative;
-width:370px;
+z-index:2;
+}
+
+.card{
+width:360px;
+
 padding:40px;
-background:rgba(0,0,0,.55);
-backdrop-filter:blur(15px);
-border:1px solid #9d4edd;
+
+background:rgba(10,10,30,.35);
+
+backdrop-filter:blur(12px);
+
+border:1px solid rgba(150,150,255,.3);
+
 border-radius:30px;
-box-shadow:0 0 40px #7b2cbf;
+
+box-shadow:
+0 0 20px #4d7cff,
+0 0 60px #3f4cff;
+
 text-align:center;
 }
 
 .avatar{
-width:120px;
+width:130px;
+height:130px;
 border-radius:50%;
-box-shadow:0 0 40px #9d4edd;
+margin:auto;
+
+background:url("https://cdn-icons-png.flaticon.com/512/149/149071.png");
+
+background-size:cover;
+
+box-shadow:
+0 0 20px cyan,
+0 0 60px cyan;
 }
 
 h1{
+color:white;
+font-size:50px;
 margin-top:20px;
-font-size:55px;
 }
 
 p{
-margin:20px 0;
-font-size:18px;
+color:#ddd;
+margin:15px 0 30px;
 }
 
 .btn{
 display:block;
-padding:18px;
-margin:18px 0;
-border:1px solid #9d4edd;
-border-radius:20px;
 text-decoration:none;
 color:white;
+
+padding:18px;
+
+margin:18px 0;
+
+border-radius:20px;
+
+border:1px solid #7b9fff;
+
+background:rgba(255,255,255,.05);
+
 transition:.4s;
 }
 
 .btn:hover{
-background:#9d4edd;
-transform:translateY(-6px);
-box-shadow:0 0 40px #9d4edd;
+transform:translateY(-7px);
+
+box-shadow:
+0 0 20px #4d7cff,
+0 0 50px #4d7cff;
 }
 
 #clock{
 margin-top:20px;
-font-size:20px;
+font-size:22px;
+color:white;
 }
 
-.moon{
-position:absolute;
-width:250px;
-height:250px;
-border-radius:50%;
+@media(max-width:500px){
 
-top:80px;
-right:100px;
-
-background:
-radial-gradient(circle at 35% 35%,
-#ff8a8a 0%,
-#ff003c 40%,
-#b3002d 100%);
-
-box-shadow:
-0 0 30px #ff003c,
-0 0 60px #ff003c,
-0 0 120px #ff003c,
-0 0 180px rgba(255,0,60,.5);
-
-animation:
-moonFloat 8s ease-in-out infinite,
-moonPulse 4s ease-in-out infinite;
+.card{
+width:92%;
 }
 
-@keyframes moonFloat{
-0%{
-transform:translateY(0px);
-}
-25%{
-transform:translateY(-15px);
-}
-50%{
-transform:translateY(-30px);
-}
-75%{
-transform:translateY(-15px);
-}
-100%{
-transform:translateY(0px);
-}
+h1{
+font-size:40px;
 }
 
-@keyframes moonPulse{
-0%{
-box-shadow:
-0 0 30px #ff003c,
-0 0 60px #ff003c,
-0 0 120px #ff003c;
-}
-
-50%{
-box-shadow:
-0 0 50px #ff003c,
-0 0 100px #ff003c,
-0 0 180px #ff003c;
-}
-
-100%{
-box-shadow:
-0 0 30px #ff003c,
-0 0 60px #ff003c,
-0 0 120px #ff003c;
-}
 }
