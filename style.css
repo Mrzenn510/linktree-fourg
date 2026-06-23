@@ -2,158 +2,205 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Cinzel',serif;
 }
 
 body{
-height:100vh;
+background:#03030d;
 overflow:hidden;
-
-background:
-linear-gradient(rgba(0,0,30,.7),rgba(0,0,0,.8)),
-url("BACKGROUND_KNIGHT.jpg");
-
-background-size:cover;
-background-position:center;
-
+height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
+color:white;
+font-family:serif;
 }
 
+/* BINTANG */
 .stars{
 position:absolute;
 width:100%;
 height:100%;
 background-image:
 radial-gradient(white 1px,transparent 1px);
-background-size:30px 30px;
-animation:stars 50s linear infinite;
+background-size:40px 40px;
 opacity:.6;
 }
 
-@keyframes stars{
-from{
-transform:translateY(0);
-}
-to{
-transform:translateY(1000px);
-}
+/* BULAN MERAH */
+.moon{
+position:absolute;
+top:60px;
+right:60px;
+
+width:220px;
+height:220px;
+
+border-radius:50%;
+
+background:
+radial-gradient(circle,
+#ffb0b0,
+#ff0033,
+#600000);
+
+box-shadow:
+0 0 50px red,
+0 0 120px red,
+0 0 220px rgba(255,0,0,.8);
+
+animation:
+moonFloat 8s ease-in-out infinite,
+moonPulse 4s infinite;
 }
 
+@keyframes moonFloat{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-25px);
+}
+
+100%{
+transform:translateY(15px);
+}
+
+}
+
+@keyframes moonPulse{
+
+50%{
+
+box-shadow:
+0 0 80px red,
+0 0 180px red,
+0 0 300px rgba(255,0,0,.8);
+
+}
+
+}
+
+/* KABUT */
 .fog{
 position:absolute;
 width:100%;
 height:100%;
-background:linear-gradient(
-transparent,
-rgba(90,90,255,.15)
-);
-
-animation:fog 6s infinite alternate;
+background:linear-gradient(transparent,
+rgba(255,255,255,.05));
+animation:fog 8s infinite alternate;
 }
 
 @keyframes fog{
+
 from{
 transform:translateY(0);
 }
 
 to{
-transform:translateY(-25px);
-}
+transform:translateY(-20px);
 }
 
+}
+
+/* KSATRIA */
+.knight{
+position:absolute;
+bottom:-20px;
+left:-50px;
+
+animation:knightMove 4s ease-in-out infinite;
+}
+
+.knight img{
+width:450px;
+
+filter:
+drop-shadow(0 0 20px cyan)
+drop-shadow(0 0 50px cyan);
+}
+
+@keyframes knightMove{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-20px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
+/* CARD */
 .container{
-position:relative;
-z-index:2;
-}
 
-.card{
-width:360px;
+width:350px;
 
 padding:40px;
 
-background:rgba(10,10,30,.35);
+background:rgba(0,0,0,.4);
 
-backdrop-filter:blur(12px);
+backdrop-filter:blur(15px);
 
-border:1px solid rgba(150,150,255,.3);
+border:1px solid #a020f0;
 
 border-radius:30px;
 
 box-shadow:
-0 0 20px #4d7cff,
-0 0 60px #3f4cff;
+0 0 20px #a020f0,
+0 0 60px #a020f0;
 
 text-align:center;
-}
 
-.avatar{
-width:130px;
-height:130px;
-border-radius:50%;
-margin:auto;
-
-background:url("https://cdn-icons-png.flaticon.com/512/149/149071.png");
-
-background-size:cover;
-
-box-shadow:
-0 0 20px cyan,
-0 0 60px cyan;
+z-index:100;
 }
 
 h1{
-color:white;
-font-size:50px;
-margin-top:20px;
+font-size:55px;
+margin-bottom:15px;
 }
 
 p{
-color:#ddd;
-margin:15px 0 30px;
+margin-bottom:30px;
 }
 
 .btn{
+
 display:block;
-text-decoration:none;
-color:white;
 
 padding:18px;
 
-margin:18px 0;
+margin:20px 0;
 
 border-radius:20px;
 
-border:1px solid #7b9fff;
+text-decoration:none;
 
-background:rgba(255,255,255,.05);
+color:white;
+
+border:1px solid #a020f0;
 
 transition:.4s;
 }
 
 .btn:hover{
-transform:translateY(-7px);
+
+transform:translateY(-8px);
+
+background:#a020f0;
 
 box-shadow:
-0 0 20px #4d7cff,
-0 0 50px #4d7cff;
+0 0 30px #a020f0;
+
 }
 
 #clock{
-margin-top:20px;
-font-size:22px;
-color:white;
-}
-
-@media(max-width:500px){
-
-.card{
-width:92%;
-}
-
-h1{
-font-size:40px;
-}
-
+margin-top:25px;
+font-size:24px;
 }
